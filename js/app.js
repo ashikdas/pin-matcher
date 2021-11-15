@@ -22,6 +22,11 @@ document.getElementById('key-pad').addEventListener('click', function(event){
         if (number == 'C'){
             calcInput.value = '';
         }
+        else{
+            var input = calcInput.value;
+            const removeInput = input.slice(0, input.length - 1);
+            calcInput.value = removeInput;
+        }
     }
     else{
         const previousNumber = calcInput.value;
