@@ -22,7 +22,7 @@ document.getElementById('key-pad').addEventListener('click', function(event){
         if (number == 'C'){
             calcInput.value = '';
         }
-        else{
+        if(number == '<'){
             var input = calcInput.value;
             const removeInput = input.slice(0, input.length - 1);
             calcInput.value = removeInput;
@@ -47,5 +47,9 @@ function verifyPin(){
     else {
         successMessage.style.display = 'none';
         failError.style.display = 'block';
+        const tryLeft = document.getElementById('try-left').innerText;
+        const left =parseInt(tryLeft);
+        document.getElementById("try-left").innerText = left -1;
+        
     }
 }
